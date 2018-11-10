@@ -15,8 +15,8 @@ namespace Poker
     }
     class Round
     {
-        public IList<Card> cards = new List<Card>();
-        List<Player> players = new List<Player>();
+        public List<Card> tableCards = new List<Card>();
+        public List<Player> players = new List<Player>();
         Deck deck = new Deck();
         int smallBlind;
         int bigBling;
@@ -48,12 +48,34 @@ namespace Poker
         //    addPlayers(Program.)
         //}
 
-        //public List<Card> dealFlop()
-        //{
+        public void dealFlop()
+        {
+            this.tableCards = deck.dealFlop();
+        }
+        public void displayRound() {
+            foreach (Player p in players)    //displays cards and names of all players
+            {
+                p.printPlayer();
+            }
+        }
 
-        //}
-       // public List<Card> 
-
+        public void displayTableCards()    //displays all current cards on the table
+        {
+            foreach(Card c in tableCards)
+            {
+                c.displayCard();
+            }
+        }
+        // public List<Card> 
+        public bool compare(Player p)
+        {
+            List<Card> handCards = p.getCards();
+            if (handCards[0].getRank() > handCards[1].getRank())
+            {
+                return true;
+            }
+            return false;
+        }
     }
            
 }

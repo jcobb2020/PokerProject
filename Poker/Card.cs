@@ -16,7 +16,6 @@ namespace Poker
 
     enum Rank
     {
-        Ace,
         Two,
         Three,
         Four,
@@ -28,7 +27,8 @@ namespace Poker
         Ten,
         Jack,
         Queen,
-        King
+        King,
+        Ace
     }
     class Card
     {
@@ -44,9 +44,16 @@ namespace Poker
         {
             return this.rank;
         }
-        public Suit GetSuit()
+        public Suit getSuit()
         {
             return this.suit;
+        }
+        public void displayCard()
+        {
+            Console.WriteLine("------");
+            Console.WriteLine(this.suit);
+            Console.WriteLine(this.rank);
+            Console.WriteLine("------");
         }
     }
 

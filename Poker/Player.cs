@@ -10,6 +10,7 @@ namespace Poker
     {
         private Card card1;
         private Card card2;
+        public Hand playerHand; 
         private String name;
         public int money;
 
@@ -31,14 +32,27 @@ namespace Poker
         {
             return this.name;
         }
+
+        public List<Card> getCards()
+        {
+            List < Card > cards = new List<Card>();
+            cards.Add(card1);
+            cards.Add(card2);
+            return cards;
+        }
      
         public void printPlayer()
         {
             Console.WriteLine(this.name);
-            Console.WriteLine(this.card1.GetSuit());
+            Console.WriteLine("------");
+            Console.WriteLine(this.card1.getSuit());
             Console.WriteLine(this.card1.getRank());
-            Console.WriteLine(this.card2.GetSuit());
+            Console.WriteLine("------");
+            Console.WriteLine(this.card2.getSuit());
             Console.WriteLine(this.card2.getRank());
+            Console.WriteLine("------");
+
         }
+
     }
 }
