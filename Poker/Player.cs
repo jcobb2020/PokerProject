@@ -18,19 +18,20 @@ namespace Poker
             this.name = playername;
         }
 
-        public void deal(Deck D)
+        public void setCard1(Card card)
         {
-            Random rnd = new Random();
-            int size = D.cards.Count();
-            int cardToDeal = rnd.Next(0, size);
-            size--;
-            this.card1 = D.cards[cardToDeal];
-            D.cards.Remove(D.cards[cardToDeal]);
-            cardToDeal = rnd.Next(0, size);
-            size--;
-            this.card2 = D.cards[cardToDeal];
-            D.cards.Remove(D.cards[cardToDeal]);
+            this.card1 = card;
         }
+        public void setCard2(Card card)
+        {
+            this.card2 = card;
+        }
+
+        public String getName()
+        {
+            return this.name;
+        }
+     
         public void printPlayer()
         {
             Console.WriteLine(this.name);
@@ -40,6 +41,4 @@ namespace Poker
             Console.WriteLine(this.card2.getRank());
         }
     }
-
-
 }

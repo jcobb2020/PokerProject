@@ -30,6 +30,7 @@ namespace Poker
             players.Add(C);
             foreach (Player p in players)
             {
+            
                 p.deal(deck1);
                 p.printPlayer();
             }
