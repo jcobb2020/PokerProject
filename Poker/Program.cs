@@ -32,18 +32,11 @@ namespace Poker
             round1.dealCards();
             round1.dealFlop();
             round1.displayRound();
-            round1.displayTableCards();
-            if (round1.compare(A)){
+            //round1.displayTableCards();
+            if (A.comparePlayersCards()){
                 Console.WriteLine("first cart of player one is bigger than second");
             }
-            foreach(Player p in round1.players)
-            {
-                if(Hand.checkIfPair(p, round1.tableCards))
-                {
-                    Console.WriteLine(p.getName() + " has a pair");
-                }
-            }
-            
+           
             Console.ReadLine();
 
         }

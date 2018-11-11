@@ -55,7 +55,10 @@ namespace Poker
         public void displayRound() {
             foreach (Player p in players)    //displays cards and names of all players
             {
-                p.printPlayer();
+                // p.printPlayer();
+                Console.WriteLine(p.getName());
+                p.playerHand = new Hand(p, tableCards);
+                p.playerHand.displayHand();
             }
         }
 
@@ -67,15 +70,7 @@ namespace Poker
             }
         }
         // public List<Card> 
-        public bool compare(Player p)
-        {
-            List<Card> handCards = p.getCards();
-            if (handCards[0].getRank() > handCards[1].getRank())
-            {
-                return true;
-            }
-            return false;
-        }
+        
     }
            
 }

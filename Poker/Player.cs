@@ -53,6 +53,14 @@ namespace Poker
             Console.WriteLine("------");
 
         }
+        public bool comparePlayersCards()
+        {
+            if (card1.getRank() > card2.getRank())
+            {
+                return true;
+            }
+            return false;
+        }
 
     }
 }
